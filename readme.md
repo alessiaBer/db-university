@@ -21,6 +21,8 @@ WHERE `cfu` > 10;
 SELECT * 
 FROM `students` 
 WHERE 2023 - YEAR(`date_of_birth`) > 30;
+soluzione giusta:
+TIMESTAMPDIFF(YEAR, `date_of_birth`, CURDATE()) > 30;
 
 ## 4
 SELECT * 
@@ -47,4 +49,9 @@ FROM `departments`;
 SELECT * 
 FROM `teachers` 
 WHERE `phone` 
+IS NULL;
+bisognava contarli:
+SELECT COUNT(*)
+FROM `teachers`
+WHERE `phone`
 IS NULL;
